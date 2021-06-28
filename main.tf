@@ -94,6 +94,7 @@ resource "helm_release" "issuer" {
   name       = "linkerd-issuer"
   namespace  = "linkerd"
   chart      = "${path.module}/charts/linkerd-issuers"
+  timeout    = "2000"
 
   values = [
     yamlencode({
